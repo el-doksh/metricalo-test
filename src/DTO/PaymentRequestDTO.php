@@ -27,7 +27,6 @@ class PaymentRequestDTO
 
         #[Assert\NotBlank(message: "Card Expiry month is required")]
         #[Assert\Type(type: 'numeric', message: "Card Expiry month must be a number")]
-        #[Assert\length(min: 2, max: 2)]
         #[Assert\Range(min: 1, max: 12, notInRangeMessage: 'Card Expiry month must be between {{ min }} and {{ max }} months',)]
         public int $cardExpMonth,
 

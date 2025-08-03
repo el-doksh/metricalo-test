@@ -16,7 +16,7 @@ class BaseController extends AbstractController
         ], $statusCode);
     }
     
-    protected function errorResponse(array $errors, string $message = '', int $statusCode = 400) : JsonResponse
+    protected function errorResponse(array $errors = [], string $message = '', int $statusCode = 400) : JsonResponse
     {
         return $this->json([
             'success' => false,
