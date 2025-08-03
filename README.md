@@ -13,10 +13,11 @@ Install Docker Compose
 
 ### 3. Build and Run the Project
 
+```bash
 docker compose up --build
+```
 
 This will:
-
 Build the PHP container from ./docker/Dockerfile
 Start Nginx using the config from ./docker/nginx/default.conf
 
@@ -28,13 +29,15 @@ http://localhost:8080
 
 ## Usage
 
-## API Example
+### API Example
 
 You can trigger a payment via the API by sending a `POST` request to the following endpoint:
 
-### Endpoint
+## Endpoint
 
-ACI example
+# ACI example
+
+```bash
 curl -X POST http://localhost:8080/api/payment/aci \
   -H "Content-Type: application/json" \
   -d '{
@@ -46,8 +49,11 @@ curl -X POST http://localhost:8080/api/payment/aci \
     "exp_year": 2030,
     "cvc": "123"
 }'
+```
 
-Shift4 example
+# Shift4 example
+
+```bash
 curl -X POST http://localhost:8080/api/payment/shift4 \
   -H "Content-Type: application/json" \
   -d '{
@@ -59,9 +65,10 @@ curl -X POST http://localhost:8080/api/payment/shift4 \
     "exp_year": 2030,
     "cvc": "123"
 }'
+```
 
 # Json Response Ex:
-{
+```bash
     "success": true,
     "message": "Payment completed",
     "data": {
@@ -71,7 +78,7 @@ curl -X POST http://localhost:8080/api/payment/shift4 \
         "currency": "EUR",
         "cardBin": "420000"
     }
-} 
+```
 
 ## Command example
 
@@ -89,6 +96,7 @@ You can trigger a test payment using the CLI command below:
 ```
 
 Parameters:
+```bash
     --amount – Transaction amount.
     --currency – Transaction currency (e.g., USD, EUR).
     --card-number – Test card number.
@@ -96,5 +104,5 @@ Parameters:
     --exp-month – Expiration month (2 digits).
     --exp-year – Expiration year (4 digits).
     --cvc – Card verification code.
-
+```
 
