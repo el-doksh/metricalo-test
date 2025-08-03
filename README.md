@@ -86,6 +86,7 @@ You can trigger a test payment using the CLI command below:
   --exp-month=11 \
   --exp-year=2030 \
   --cvc=123
+```
 
 Parameters:
     --amount – Transaction amount.
