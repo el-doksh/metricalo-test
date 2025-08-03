@@ -6,8 +6,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class PaymentRequestDTO
 {
-    // TODO secure cardnumber, year,month, cvc ...so on
-    // TODO check validation again , not working for last 4 variables
     public function __construct(
         #[Assert\NotBlank(message: "Amount is required")]
         #[Assert\Type(type: 'float', message: "Amount must be a number")]

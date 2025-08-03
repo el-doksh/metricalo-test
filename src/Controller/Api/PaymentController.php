@@ -15,11 +15,10 @@ final class PaymentController extends BaseController
     #[Route('/api/payment/{provider}', name: 'app_api_payment', methods: ['POST'])]
     public function charge(string $provider, #[MapRequestPayload] PaymentRequestDTO $paymentRequestDTO, PaymentProcessor $paymentProcessor) : JsonResponse
     {
-        // TODO unit test...
         try {
             $paymentResponse = $paymentProcessor->process($provider, $paymentRequestDTO);
             if($paymentResponse instanceof PaymentResponseDTO) {
-                return $this->successResponse($paymentResponse, 'Successfully received');
+                return $this->successResponse($paymentResponse, 'Payment completed');
             }
 
             $message = $paymentResponse->message;

@@ -28,8 +28,6 @@ class PaymentChargeCommand extends Command
 
     protected function configure(): void
     {
-        // TODO add some validations
-        
         $this
             ->addArgument('provider', InputArgument::REQUIRED, 'set provider name.')
             ->addOption('amount', null, InputOption::VALUE_REQUIRED, 'Amount in major units (e.g., 10.00)')

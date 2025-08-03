@@ -36,8 +36,6 @@ class AciProvider implements PaymentProviderInterface
     public function charge(PaymentRequestDTO $paymentRequestDTO): PaymentResponseDTO | ErrorDTO
     {
         try {
-            // DNE
-            // TODO ERRDTO msh 3agbany
             $url = "https://eu-test.oppwa.com/v1/payments";
             $data = [
                 'entityId' => $this->getEntityId(),

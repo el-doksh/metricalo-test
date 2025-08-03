@@ -1,0 +1,20 @@
+services:
+    app:
+        build: 
+            context: .
+            dockerfile: docker/Dockerfile
+        container_name: metricalo-app
+        volumes:
+            - .:/var/www/html/metricalo-test
+        ports:
+            - "9000:9000"
+    web:
+        image: nginx:alpine
+        container_name: metricalo-nginx
+        ports:
+            - "8080:80"
+        volumes:
+            - .:/var/www/html/metricalo-test
+            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+        depends_on:
+            - app
